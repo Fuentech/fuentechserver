@@ -1,0 +1,34 @@
+spring:
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bdfuentech
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.mi.com.co
+    port: 587
+    username: admin@fuentech.com.co
+    password: MonkeyTech21
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 1406
+  error:
+    include-message: always
+    include-binding-errors: always
+
+jwt:
+  secret: monkey
+  expiration: 21600
