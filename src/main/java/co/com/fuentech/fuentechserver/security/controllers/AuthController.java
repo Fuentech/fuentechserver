@@ -40,4 +40,9 @@ public class AuthController {
     public ResponseEntity<?> createUser(@Valid @RequestBody UserRequest userRequest) {
         return userService.createUser(userRequest);
     }
+
+    @GetMapping("/confirm")
+    public ResponseEntity<?> confirm(@RequestParam("token") String token) {
+        return userService.confirmToken(token);
+    }
 }
